@@ -26,7 +26,7 @@ jobs:
           tar -zxf image-syncer-${IMAGE_SYNCER_VERSION}-linux-amd64.tar.gz
 
       - name: add sercret to file
-        run: envsubst < auth.json > auth.json
+        run: envsubst < auth.json > auth.bak.json
 
       - name: sync images
-        run: ./image-syncer --proc=10 --auth=./auth.json --images=./images.json --namespace=admin4j --registry=registry.hub.docker.com --retries=3
+        run: ./image-syncer --proc=10 --auth=./auth.bak.json --images=./images.json --namespace=admin4j --registry=registry.hub.docker.com --retries=3

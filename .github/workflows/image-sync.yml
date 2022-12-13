@@ -9,8 +9,8 @@ on:
 
 env:
   IMAGE_SYNCER_VERSION: v1.3.1
-  USERNAME: ${{ secrets.ALIYUN_USERNAME }}
-  PASSWORD: ${{ secrets.ALIYUN_PASSWORD }}
+  USERNAME: ${{ secrets.DOCKER_USERNAME }}
+  PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
 
 jobs:
   image-sync:

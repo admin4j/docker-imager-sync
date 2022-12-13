@@ -5,10 +5,12 @@ on:
   pull_request:
     branches: [main]
   schedule:
-    - cron: "0 14 * * 1"
+    - cron: "0 15 * * *"
 
 env:
   IMAGE_SYNCER_VERSION: v1.3.1
+  DOCKER_NAMESPACE: $GITHUB_REPOSITORY_OWNER
+  DOCKER_REGISTRY: "registry.hub.docker.com"
   USERNAME: ${{ secrets.DOCKER_USERNAME }}
   PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
 
@@ -29,4 +31,4 @@ jobs:
         run: envsubst < auth.json > auth.bak.json
 
       - name: sync images
-        run: ./image-syncer --proc=10 --auth=./auth.bak.json --images=./images.json --namespace=admin4j --registry=registry.hub.docker.com --retries=3
+        run: ./image-syncer --proc=10 --auth=./auth.bak.json --images=./images.json --namespace=${DOCKER_NAMESPACE} --registry=${DOCKER_REGISTRY} --retries=3

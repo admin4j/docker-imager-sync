@@ -1,0 +1,33 @@
+name: image-sync
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  schedule:
+    - cron: "0 30 * * 1"
+
+env:
+  IMAGE_SYNCER_VERSION: v1.3.1
+  USERNAME: ${{ secrets.ALIYUN_USERNAME }}
+  PASSWORD: ${{ secrets.ALIYUN_PASSWORD }}
+
+jobs:
+  image-sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: install image-sync tool
+        run: |
+          wget https://github.com/AliyunContainerService/image-syncer/releases/download/${IMAGE_SYNCER_VERSION}/image-syncer-${IMAGE_SYNCER_VERSION}-linux-amd64.tar.gz
+          tar -zxf image-syncer-${IMAGE_SYNCER_VERSION}-linux-amd64.tar.gz
+
+      - name: add sercret to file
+        run: envsubst < auth.json > auth.json
+
+      - name: sync images
+        run: ./image-syncer --proc=10 --auth=./auth.json --images=./images.json --namespace=admin4j \
+        --registry=registry.hub.docker.com --retries=3

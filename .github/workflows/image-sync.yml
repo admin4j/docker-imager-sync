@@ -29,5 +29,4 @@ jobs:
         run: envsubst < auth.json > auth.json
 
       - name: sync images
-        run: ./image-syncer --proc=10 --auth=./auth.json --images=./images.json --namespace=admin4j \
-        --registry=registry.hub.docker.com --retries=3
+        run: ./image-syncer --proc=10 --auth=./auth.json --images=./images.json --namespace=admin4j --registry=registry.hub.docker.com --retries=3

@@ -1,15 +1,15 @@
 {
-  "quay.io/coreos/kube-rbac-proxy": "admin4j/kube-rbac-proxy",
-  "k8s.gcr.io/metrics-server/metrics-server": "admin4j/metrics-server",
-  "k8s.gcr.io/ingress-nginx/controller": "admin4j/ingress-nginx-controller",
-  "gcr.io/kaniko-project/executor:debug,latest": "admin4j/kaniko-executor",
-  "k8s.gcr.io/kube-state-metrics/kube-state-metrics": "admin4j/kube-state-metrics",
-  "k8s.gcr.io/prometheus-adapter/prometheus-adapter": "admin4j/prometheus-adapter",
-  "k8s.gcr.io/kube-apiserver": "admin4j/kube-apiserver",
-  "k8s.gcr.io/kube-controller-manager": "admin4j/kube-controller-manager",
-  "k8s.gcr.io/kube-scheduler": "admin4j/kube-scheduler",
-  "k8s.gcr.io/kube-proxy": "admin4j/kube-proxy",
-  "k8s.gcr.io/pause": "admin4j/pause",
-  "k8s.gcr.io/etcd": "admin4j/etcd",
-  "coredns/coredns": "admin4j/coredns"
+  "quay.io/coreos/kube-rbac-proxy": "you608714/kube-rbac-proxy",
+  "k8s.gcr.io/metrics-server/metrics-server": "you608714/metrics-server",
+  "k8s.gcr.io/ingress-nginx/controller": "you608714/ingress-nginx-controller",
+  "gcr.io/kaniko-project/executor:debug,latest": "you608714/kaniko-executor",
+  "k8s.gcr.io/kube-state-metrics/kube-state-metrics": "you608714/kube-state-metrics",
+  "k8s.gcr.io/prometheus-adapter/prometheus-adapter": "you608714/prometheus-adapter",
+  "k8s.gcr.io/kube-apiserver": "you608714/kube-apiserver",
+  "k8s.gcr.io/kube-controller-manager": "you608714/kube-controller-manager",
+  "k8s.gcr.io/kube-scheduler": "you608714/kube-scheduler",
+  "k8s.gcr.io/kube-proxy": "you608714/kube-proxy",
+  "k8s.gcr.io/pause": "you608714/pause",
+  "k8s.gcr.io/etcd": "you608714/etcd",
+  "coredns/coredns": "you608714/coredns"
 }
